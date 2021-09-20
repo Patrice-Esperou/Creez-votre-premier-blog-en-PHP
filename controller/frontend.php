@@ -6,7 +6,7 @@ require_once('model/CommentManager.php');
 
 function listPosts()//Les blogs
 {
-    $PostManager = new PostManager();//Création d'un objet
+    $PostManager = new \PatriceEsperou\Blog\Model\PostManager();//Création d'un objet
     $posts = $PostManager->getPosts();//Appel d'une fonction de cet objet
 
     require('view/frontend/listPostsView.php');
