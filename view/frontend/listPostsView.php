@@ -17,10 +17,10 @@
                 <li class="list-group-item"><?= $data['title']; ?></li>
                 <li class="list-group-item"><?= $data['content']; ?></li>
                </ul>
-        <a href="deleteBlog.php?id=<?= $data['id']; ?>">
+        <a href="deleteBlog.php?action=post&amp;id=<?= $data['id']; ?>">
                 <button style="color: white; background-color: red; margin-bottom: 10px;">Supprimer le blog </button>
         </a>
-        <a href="modifyBlog.php?id=<?= $data['id']; ?>">
+        <a href="index.php?action=post&amp;id=<?= $data['id'] ?>">
                 <button style="color: black; background-color: yellow; margin-bottom: 10px;">Modifier le blog </button>
         </a>
         <a href="index.php?action=post&amp;id=<?= $data['id'] ?>">
