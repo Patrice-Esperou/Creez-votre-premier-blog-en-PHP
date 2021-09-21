@@ -3,6 +3,7 @@
 //charge les classes
 require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
+require_once('model/ModifyManager.php');
 
 function listPosts()//Les blogs
 {
@@ -34,5 +35,18 @@ function addComment($postId, $pseudo, $comment_unique)// Ajoute un commentaire
     }
     else {
         header('Location: index.php?action=post&id=' . $postId);
+    }
+}
+function addModify($author, $title, $content)
+{
+    $modifyManager = new \PatriceEsperou\Blog\Model\ModifyManager();
+    $affectedLines = $modifyManager->postModify($author, $title, $content);
+    if ($affectedLines === false) {
+        throw new Exception('Impossible de modifier le blog !');
+
+        require('view/frontend/modifyView.php');
+    }
+    else {
+        header('Location: index.php?action=post&id=' . $postId );
     }
 }
