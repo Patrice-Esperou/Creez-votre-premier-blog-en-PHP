@@ -7,7 +7,7 @@ class CommentManager extends Manager
 {
     public function getComments($postId)
     {
-         $db = $this->dbConnect();
+        $db = $this->dbConnect();
          $comments = $db->prepare('SELECT id, pseudo, comment_unique, comment_date FROM comments where post_id = ? ORDER BY comment_date DESC');
          $comments->execute(array($postId));
 
@@ -24,3 +24,4 @@ class CommentManager extends Manager
         return $affecteLines;
     }
 }
+
